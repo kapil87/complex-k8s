@@ -10,7 +10,7 @@ docker push kdev87/multi-client:$SHA
 docker push kdev87/multi-server:$SHA 
 docker push kdev87/multi-worker:$SHA
 
-kubectl apply k8s
+kubectl apply -f k8s
 
 kubectl set image deployments/server-deployment server=kdev87/multi-server:$SHA
 kubectl set image deployments/client-deployment client=kdev87/multi-client:$SHA
