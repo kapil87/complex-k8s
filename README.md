@@ -8,7 +8,9 @@ When you deploy this on New Cluster Please do following steps:
  ./get_helm.sh
 
 #Add service account
+
 kubectl create serviceaccount --namespace kube-system tiller
 
 #Add cluster role to the service account
+
 kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
